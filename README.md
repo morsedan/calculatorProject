@@ -63,9 +63,9 @@ A basic calculation: `2 + 4` consists of two operands (`2` and `4`) and an opera
 ### Testing
 At this point, you should have enough of the functionality coded to let you test the app. Run the app and try adding digits to the screen. `0-9` and the `.` should be functional buttons. Once you've entered a few digits, try resetting the screen and transaction with the "C" button. Then enter a few more digits and see if a new number is displayed. A possible test could be as follows: enter `5`, `9`, `.`, `2`; and `59.2` should be displayed. Then press clear and try another multiple digit number. It should show you a new number rather than just adding to `59.2`.
 
-### In `CalculatorViewController.swift`:
+### In `CalculatorViewController.swift`:s
 * `operatorTapped` follows virtually the same flow as the `operandTapped` method. Go to the storyboard to see how this action is wired up as well. Unlike the `IBAction` method for operands, you'll need to call `setOperator` on your brain object. Note, that method doesn't return anything.
-* In `equalTapped`, hopefully the user has entered everything they need to complete a mathematical expression. From here, you'll need to call `calculateIfPossible` on your brain object. That method will return a solution string to be displayed in your `outputLabel`, but if you look at the return type, it's actually a `String?`. Meaning you'll need to use another `if-let` to ensure the value returned isn't `nil` before displaying it in the label.
+* In `equalTapped`, hopefully the user has entered everything they need to complete a mathematical expression. From here, ycou'll need to call `calculateIfPossible` on your brain object. That method will return a solution string to be displayed in your `outputLabel`, but if you look at the return type, it's actually a `String?`. Meaning you'll need to use another `if-let` to ensure the value returned isn't `nil` before displaying it in the label.
 
 ### In `CalculatorBrain.swift`:
 * In `setOperator`, convert the `operatorString` passed into this method into an instance of your `OperatorType` enum, and then assign it to your `operatorType` property.
